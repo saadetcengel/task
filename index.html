@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
+    <title>Document</title>
 </head>
 <body>
     <table>
         <tr>
-            <th>İş Adı</th>
-            <th>İş Tanımı</th>
-            <th>Başlangıç Tarihi</th>
-            <th>Bitiş Tarihi</th>
-            <th></th>
-            <th class = "select">Statü
-                <select>        
+            <td scope="col">İş Adı</td>
+            <td scope="col">İş Tanımı</td>
+            <td scope="col">Başlangıç Tarihi</td>
+            <td scope="col">Bitiş Tarihi</td>
+            <td></td>
+            <label>Statü</label>
+            <td class = "col-xl-4">
+                <p-dropdown>
+                    placeholder="Statü Giriniz"
                     <option value="done">Tamamlandı </option>
                     <option value="inProggres">Devam Ediyor</option>
                     <option value="waiting">Beklemede</option>
-            </select>
-            </th>
+            </p-dropdown>
+        </td>
           </tr>
           <tr>
             <td>
@@ -66,8 +68,21 @@
             <td>
                 <i class="fa fa-trash text-danger"></i>
             </td>
-
+            if( value== done){
+                <td>           
+                    <label style="background-color: green">Tamamlandı</label>            
+                </td>
+            }
+            else if(value== inProggres)
+            {
+                <label style="background-color: blue">Devam Ediyor</label> 
+            }
+            else
+            {
+                <label style="background-color: white">Beklemede</label>
+            }
           </tr>
     </table>
+    
 </body>
 </html>
