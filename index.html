@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>İş Adı</th>
+            <th>İş Tanımı</th>
+            <th>Başlangıç Tarihi</th>
+            <th>Bitiş Tarihi</th>
+            <th></th>
+            <th class = "select">Statü
+                <select>        
+                    <option value="done">Tamamlandı </option>
+                    <option value="inProggres">Devam Ediyor</option>
+                    <option value="waiting">Beklemede</option>
+            </select>
+            </th>
+          </tr>
+          <tr>
+            <td>
+                <div class="input-group">
+                <textarea style="max-width:100px"
+                          pInputTextarea
+                          placeholder="İş Adı giriniz."
+                          rows="1"
+                          name="taskName"
+                ></textarea>
+              </div>
+            </td>
+            <td>
+                <div class="input-group">
+                    <textarea style="max-width:100px"
+                              pInputTextarea
+                              placeholder="İş Tanımı giriniz."
+                              rows="2"
+                              name="taskDefiniton"
+                    ></textarea>
+                  </div>
+            </td>
+            <td>                
+                <div class="input-group">
+                <textarea style="max-width:100px"
+                          pInputTextarea
+                          placeholder="Başlangıç Tarihi giriniz."
+                          rows="3"
+                          name="startDate"
+                ></textarea>
+              </div>
+            </td>
+            <td>
+                <div class="input-group">
+                <textarea style="max-width:100px"
+                          pInputTextarea
+                          placeholder="Bitiş Tarihi giriniz."
+                          rows="4"
+                          name="endDate"
+                ></textarea>
+              </div>
+            </td>
+            <td>
+                <i class="fa fa-trash text-danger"></i>
+            </td>
+
+          </tr>
+    </table>
+</body>
+</html>
