@@ -3,6 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <script>
+    function filterFunction() {
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("statusDropdown");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("emptbl");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
         function addRows(){ 
             var table = document.getElementById('emptbl');
             var rowCount = table.rows.length;
@@ -45,6 +62,14 @@
 </head>
 <body>
     <h3>To Do List</h3>
+    <th>
+        <select id="statusDropdown" oninput="filterFunction()">
+        <option>Tümü</option>
+        <option>Beklemede</option>
+        <option>Devam ediyor</option>
+        <option>Tamamlandı</option>
+      </select>
+    </th>
 
     <table   id="emptbl" bgcolor="grey" width="700">
         <tr bgcolor="grey">
@@ -56,16 +81,16 @@
         </tr>
         <tr>
             <td id="col0">
-                <input type="text" name="task">
+                <input type="text" name="task" required>
             </td>
             <td id="col1">
-                <input type="text" name="description">
+                <input type="text" name="description" >
             </td>
             <td id="col2">
-                <input type="date" name="setTodaysDate" >
+                <input type="date" name="setTodaysDate" required>
             </td>
             <td id="col3">               
-             <input type="date" name="endDate">
+             <input type="date" name="endDate" required>
             </td>
             <td id="col4">   
                 <select name="statu" id="col4" class="whiteText" onchange="this.className=this.options[this.selectedIndex].className" >
