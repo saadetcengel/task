@@ -3,23 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <script>
-    function filterFunction() {
-    var input, filter, table, tr, td, i;
-    input = document.getElementById("statusDropdown");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("emptbl");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
         function addRows(){ 
             var table = document.getElementById('emptbl');
             var rowCount = table.rows.length;
@@ -50,7 +33,6 @@
         var today = new Date().toISOString().split('T')[0];
         document.getElementsByName("setTodaysDate")[0].setAttribute('min', today);
          }
-        
         </script>
         <style>
         .greenText{ background-color:green; }
@@ -61,15 +43,7 @@
         </style>
 </head>
 <body>
-    <h3>To Do List</h3>
-    <th>
-        <select id="statusDropdown" oninput="filterFunction()">
-        <option>Tümü</option>
-        <option>Beklemede</option>
-        <option>Devam ediyor</option>
-        <option>Tamamlandı</option>
-      </select>
-    </th>
+    <h2>To Do List</h2>
 
     <table   id="emptbl" bgcolor="grey" width="700">
         <tr bgcolor="grey">
